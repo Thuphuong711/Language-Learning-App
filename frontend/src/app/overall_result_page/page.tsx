@@ -1,5 +1,4 @@
-"use client";
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'; // Changed from next/router
 
 export default function OverallResultPage() {
     const router = useRouter();
