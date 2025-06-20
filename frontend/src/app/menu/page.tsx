@@ -1,4 +1,4 @@
-'use client';
+'use client'; // From ChatGPT
 
 import { Info } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 export default function MenuPage() {
   const router = useRouter();
 
+  // Menu buttons - onClick currently for placeholder
   const menuItems = [
     { label: 'Start Learning', onClick: () => router.push('/learning') },
     { label: 'Progress', onClick: () => router.push('/progress') },
@@ -19,6 +20,8 @@ export default function MenuPage() {
       <h1 className="text-black text-3xl font-bold mb-6">Menu</h1>
       
       <div className="w-full max-w-xs space-y-6">
+        
+        {/* Fetch on each menu button and create button for each */}
         {menuItems.map((item, index) => (
           <button
             key={index}

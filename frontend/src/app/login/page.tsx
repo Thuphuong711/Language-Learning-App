@@ -1,4 +1,4 @@
-'use client';
+'use client'; // From ChatGPT
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -9,6 +9,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // Login button flow
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login submitted:', { email, password });
@@ -19,12 +20,15 @@ export default function LoginPage() {
     <div className="w-full h-screen bg-green-50 flex flex-col">
       {/* Header */}
       <div className="bg-lime-400 px-4 py-2 flex items-center justify-between">
+        
+        {/* Back button to landing page (if we have one) */}
         <button
-          onClick={() => router.push('/')}
+          onClick={() => router.push('/')} // currently go to URL / - will be landing page if having one
           className="text-black text-3xl font-bold"
         >
           ←
         </button>
+
         <div className="flex-1 text-center pr-6">
           <h1 className="text-black text-2xl font-bold">Login</h1>
         </div>
@@ -35,6 +39,8 @@ export default function LoginPage() {
         onSubmit={handleSubmit}
         className="flex flex-col flex-1 justify-center px-6 space-y-6"
       >
+        
+        {/* For user email input */}
         <div>
           <label className="block text-base font-medium text-gray-700 mb-1">Email</label>
           <input
@@ -46,6 +52,7 @@ export default function LoginPage() {
           />
         </div>
 
+        {/* For user password input */}
         <div>
           <label className="block text-base font-medium text-gray-700 mb-1">Password</label>
           <input
@@ -57,6 +64,7 @@ export default function LoginPage() {
           />
         </div>
 
+        {/* Login button */}
         <button
           type="submit"
           className="w-full py-2 text-lg bg-green-500 text-white font-bold rounded-md hover:bg-green-600 transition"
@@ -64,7 +72,7 @@ export default function LoginPage() {
           Log In
         </button>
 
-        {/* Divider */}
+        {/* Divider separate main login and other login methods */}
         <div className="flex items-center mb-6">
           <div className="flex-grow border-t border-gray-600" />
           <span className="mx-4 text-sm text-gray-700 font-semibold">OR</span>
